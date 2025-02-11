@@ -57,6 +57,6 @@ pip install pandas numpy matplotlib seaborn plotly sweetviz
 
 **License:**
 
-This project is open-source and available under the MIT License.
+This project is open-source and available under the MIT License. <br>
 Author: Kintur Shah
 
