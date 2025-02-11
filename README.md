@@ -20,16 +20,16 @@ The dataset used in this project is sourced from Kaggle: [Complete Zomato Datase
 
 The zomato_eda.ipynb notebook includes:
 
-Data Cleaning and Preprocessing
-Analysis of Restaurant Ratings
-Cost Analysis of Restaurants
-Popular Cuisine Types
-Geographic Distribution of Restaurants
-Online Service Availability
-Key Insights
-Distribution of restaurant ratings across different locations
-Correlation between cost and restaurant ratings
-Most common cuisines in different cities
+Data Cleaning and Preprocessing <br>
+Analysis of Restaurant Ratings <br>
+Cost Analysis of Restaurants <br>
+Popular Cuisine Types <br>
+Geographic Distribution of Restaurants <br>
+Online Service Availability <br>
+Key Insights <br>
+Distribution of restaurant ratings across different locations <br>
+Correlation between cost and restaurant ratings <br>
+Most common cuisines in different cities <br>
 
 Geographic clustering of restaurants using latitude and longitude
 
