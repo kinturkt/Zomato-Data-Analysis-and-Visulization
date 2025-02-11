@@ -43,10 +43,9 @@ Cuisine Popularity <br>
 Geographic Distribution of Restaurants <br>
 Online Service Availability <br>
 
-How to Use
+**How to Use:**
 
-Open the zomato_eda.ipynb in Jupyter Notebook to explore the analysis.
-
+Open the zomato_eda.ipynb in Jupyter Notebook to explore the analysis. <br>
 Open dashboard.html in a web browser and upload zomato.json to view interactive visualizations.
 
 **Dependencies:**
