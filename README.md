@@ -1,6 +1,6 @@
 # Zomato-Restaurant-Data-Analysis-and-Visulization
 
-****Overview:**
+**Overview:**
 
 This project explores and analyzes the Zomato restaurant dataset to gain insights into restaurant ratings, cuisines, costs, and geographic distribution. The analysis is performed using Python, and the results are visualized through an interactive dashboard.
 
