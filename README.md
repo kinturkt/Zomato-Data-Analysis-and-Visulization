@@ -1,14 +1,14 @@
 # Zomato-Restaurant-Data-Analysis-and-Visulization
 
-Overview
+****Overview:**
 
 This project explores and analyzes the Zomato restaurant dataset to gain insights into restaurant ratings, cuisines, costs, and geographic distribution. The analysis is performed using Python, and the results are visualized through an interactive dashboard.
 
-Dataset:
+**Dataset:**
 
 The dataset used in this project is sourced from Kaggle: [Complete Zomato Dataset]([url](https://www.kaggle.com/code/vahidehdashti/complete-zomato-dataset-eda/input?select=zomato.csv)).
 
-Files in Repository:
+**Files in Repository:**
 
 zomato.csv: Raw dataset containing restaurant details.
 zomato.json: JSON format of the dataset for easy parsing.
@@ -16,7 +16,7 @@ zomato_eda.ipynb: Jupyter Notebook containing exploratory data analysis (EDA) an
 zomato_sweetviz_report.html: Auto-generated EDA report using Sweetviz for quick insights.
 dashboard.html: Interactive dashboard displaying visualizations of restaurant trends.
 
-Exploratory Data Analysis (EDA):
+**Exploratory Data Analysis (EDA):**
 
 The zomato_eda.ipynb notebook includes:
 
@@ -33,7 +33,7 @@ Most common cuisines in different cities
 
 Geographic clustering of restaurants using latitude and longitude
 
-Interactive Dashboard:
+**Interactive Dashboard:**
 
 The dashboard.html file provides an interactive visualization of restaurant trends using Plotly. Users can upload the zomato.json file to generate:
 
@@ -45,24 +45,18 @@ Online Service Availability
 
 How to Use
 
-Clone the repository:
-
-git clone https://github.com/yourusername/zomato-analysis.git
-cd zomato-analysis
-
 Open the zomato_eda.ipynb in Jupyter Notebook to explore the analysis.
 
 Open dashboard.html in a web browser and upload zomato.json to view interactive visualizations.
 
-Dependencies:
+**Dependencies:**
 
 To run the Jupyter Notebook and analysis, install the required Python libraries:
 
 pip install pandas numpy matplotlib seaborn plotly sweetviz
 
-License:
+**License:**
 
 This project is open-source and available under the MIT License.
-
 Author: Kintur Shah
 
