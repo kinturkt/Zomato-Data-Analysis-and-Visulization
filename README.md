@@ -10,11 +10,11 @@ The dataset used in this project is sourced from Kaggle: [Complete Zomato Datase
 
 **Files in Repository:**
 
-zomato.csv: Raw dataset containing restaurant details.
-zomato.json: JSON format of the dataset for easy parsing.
-zomato_eda.ipynb: Jupyter Notebook containing exploratory data analysis (EDA) and visualizations.
-zomato_sweetviz_report.html: Auto-generated EDA report using Sweetviz for quick insights.
-dashboard.html: Interactive dashboard displaying visualizations of restaurant trends.
+**zomato.csv**: Raw dataset containing restaurant details. <br>
+**zomato.json:** JSON format of the dataset for easy parsing. <br>
+**zomato_eda.ipynb:** Jupyter Notebook containing exploratory data analysis (EDA) and visualizations. <br>
+**zomato_sweetviz_report.html:** Auto-generated EDA report using Sweetviz for quick insights. <br>
+**dashboard.html:** Interactive dashboard displaying visualizations of restaurant trends. <br>
 
 **Exploratory Data Analysis (EDA):**
 
@@ -37,11 +37,11 @@ Geographic clustering of restaurants using latitude and longitude
 
 The dashboard.html file provides an interactive visualization of restaurant trends using Plotly. Users can upload the zomato.json file to generate:
 
-Rating Distribution
-Cost vs. Rating Comparison
-Cuisine Popularity
-Geographic Distribution of Restaurants
-Online Service Availability
+Rating Distribution <br>
+Cost vs. Rating Comparison <br>
+Cuisine Popularity <br>
+Geographic Distribution of Restaurants <br>
+Online Service Availability <br>
 
 How to Use
 
