@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Sales Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 20px; 
+            background: linear-gradient(to right, #f0f8ff, #e6e6fa);
+        }
+        .chart { 
+            width: 100%; 
+            height: 400px; 
+            margin-bottom: 20px; 
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        #viewDashboard {
+            display: none;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        #viewDashboard:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Restaurant Sales Dashboard</h1>
+    <!-- Upload the JSON file to view the dashboard -->
+    <input type="file" id="fileInput" accept=".json">
+    <button id="viewDashboard" onclick="showDashboard()">View Dashboard</button>
+    <div id="dashboard" style="display:none;">
+        <div id="ratingDistribution" class="chart"></div>
+        <div id="costVsRating" class="chart"></div>
+        <div id="cuisineAnalysis" class="chart"></div>
+        <div id="geographicDistribution" class="chart"></div>
+        <div id="onlineServices" class="chart"></div>
+    </div>
+
+    <script>
+        let dashboardData;
+
+        document.getElementById('fileInput').addEventListener('change', handleFileSelect);
+
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                dashboardData = JSON.parse(e.target.result);
+                document.getElementById('viewDashboard').style.display = 'block';
+            };
+            reader.readAsText(file);
+        }
+
+        function showDashboard() {
+            document.getElementById('dashboard').style.display = 'block';
+            createDashboard(dashboardData);
+        }
+
+        function createDashboard(data) {
+            createRatingDistribution(data);
+            createCostVsRating(data);
+            createCuisineAnalysis(data);
+            createGeographicDistribution(data);
+            createOnlineServices(data);
+        }
+
+        function createRatingDistribution(data) {
+            const ratings = data.map(item => item['Aggregate rating']);
+            const trace = {
+                x: ratings,
+                type: 'histogram',
+                marker: { color: 'skyblue' }
+            };
+            const layout = { title: 'Aggregate Rating Distribution' };
+            Plotly.newPlot('ratingDistribution', [trace], layout);
+        }
+
+        function createCostVsRating(data) {
+            const costs = data.map(item => item['Average Cost for two']);
+            const ratings = data.map(item => item['Aggregate rating']);
+            const trace = {
+                x: costs,
+                y: ratings,
+                type: 'histogram2d',
+                colorscale: 'YlOrRd'
+            };
+            const layout = { 
+                title: 'Average Cost for Two vs Aggregate Rating',
+                xaxis: { title: 'Average Cost for Two' },
+                yaxis: { title: 'Aggregate Rating' }
+            };
+            Plotly.newPlot('costVsRating', [trace], layout);
+        }
+
+        function createCuisineAnalysis(data) {
+            const cuisines = data.flatMap(item => item.Cuisines.split(', '));
+            const cuisineCounts = cuisines.reduce((acc, cuisine) => {
+                acc[cuisine] = (acc[cuisine] || 0) + 1;
+                return acc;
+            }, {});
+            const sortedCuisines = Object.entries(cuisineCounts)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 15);
+            const trace = {
+                y: sortedCuisines.map(item => item[0]),
+                x: sortedCuisines.map(item => item[1]),
+                type: 'bar',
+                orientation: 'h',
+                marker: { color: 'lightgreen' }
+            };
+            const layout = { 
+                title: 'Top 15 Cuisine Types',
+                xaxis: { title: 'Count' },
+                yaxis: { title: 'Cuisine' }
+            };
+            Plotly.newPlot('cuisineAnalysis', [trace], layout);
+        }
+
+        function createGeographicDistribution(data) {
+            const trace = {
+                lon: data.map(item => item.Longitude),
+                lat: data.map(item => item.Latitude),
+                text: data.map(item => item['Restaurant Name']),
+                type: 'scattermapbox',
+                marker: { size: 10 }
+            };
+            const layout = {
+                title: 'Geographic Distribution of Restaurants',
+                mapbox: { style: "open-street-map", center: { lat: 14.5, lon: 121 }, zoom: 10 },
+                showlegend: false
+            };
+            Plotly.newPlot('geographicDistribution', [trace], layout);
+        }
+
+        function createOnlineServices(data) {
+            const services = ['Has Table booking', 'Has Online delivery', 'Is delivering now'];
+            const counts = services.map(service => ({
+                yes: data.filter(item => item[service] === 'Yes').length,
+                no: data.filter(item => item[service] === 'No').length
+            }));
+            const trace1 = {
+                x: services,
+                y: counts.map(count => count.yes),
+                name: 'Yes',
+                type: 'bar',
+                marker: { color: 'lightblue' }
+            };
+            const trace2 = {
+                x: services,
+                y: counts.map(count => count.no),
+                name: 'No',
+                type: 'bar',
+                marker: { color: 'salmon' }
+            };
+            const layout = {
+                title: 'Online Services Availability',
+                barmode: 'group'
+            };
+            Plotly.newPlot('onlineServices', [trace1, trace2], layout);
+        }
+    </script>
+</body>
+</html>
