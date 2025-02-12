@@ -30,7 +30,6 @@ Key Insights <br>
 Distribution of restaurant ratings across different locations <br>
 Correlation between cost and restaurant ratings <br>
 Most common cuisines in different cities <br>
-
 Geographic clustering of restaurants using latitude and longitude
 
 **Interactive Dashboard:**
