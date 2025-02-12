@@ -1,4 +1,4 @@
-# Zomato-Restaurant-Data-Analysis-and-Visulization
+# Zomato-Restaurant-Data-Analysis-and-Visualization
 
 **Overview:**
 
