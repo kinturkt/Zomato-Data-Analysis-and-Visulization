@@ -6,7 +6,7 @@ This project explores and analyzes the Zomato restaurant dataset to gain insight
 
 **Dataset:**
 
-The dataset used in this project is sourced from Kaggle: [Complete Zomato Dataset]([url](https://www.kaggle.com/code/vahidehdashti/complete-zomato-dataset-eda/input?select=zomato.csv)).
+The dataset used in this project is sourced from Kaggle: [Complete Zomato Dataset]([https://www.kaggle.com/code/vahidehdashti/complete-zomato-dataset-eda/input?select=zomato.csv]).
 
 **Files in Repository:**
 
