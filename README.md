@@ -6,7 +6,7 @@ This project explores and analyzes the Zomato restaurant dataset to gain insight
 
 **Dataset:**
 
-The dataset used in this project is sourced from Kaggle: https://www.kaggle.com/code/vahidehdashti/complete-zomato-dataset-eda/input?select=zomato.csv.
+The dataset used in this project is sourced from Kaggle: [Zomato Dataset](https://www.kaggle.com/code/vahidehdashti/complete-zomato-dataset-eda/input?select=zomato.csv).
 
 **Files in Repository:**
 
@@ -56,5 +56,5 @@ pip install pandas numpy matplotlib seaborn plotly sweetviz
 **License:**
 
 This project is open-source and available under the MIT License. <br>
-**Author: Kintur Shah** 
+**Author: Kintur Shah** <br>
 [LinkedIn](https://www.linkedin.com/in/kintur-shah/) | [Github](https://github.com/kinturkt)
